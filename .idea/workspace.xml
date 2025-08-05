@@ -4,35 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ccac801-6443-4c87-ab4c-1c774107b675" name="Changes" comment="added foto2.png">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/task_manager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/task_manager.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_manager/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_manager/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_manager/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_manager/foto1.png" beforeDir="false" afterPath="$PROJECT_DIR$/task_manager/static/images/foto1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_manager/foto2.png" beforeDir="false" afterPath="$PROJECT_DIR$/task_manager/static/images/foto2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_manager/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_manager/task_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manager/config/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_manager/task_manager/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manager/config/asgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_manager/task_manager/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manager/config/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_manager/task_manager/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manager/config/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_manager/task_manager/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manager/config/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_manager/tasks/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manager/tasks/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_manager/tasks/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manager/tasks/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/views.py" beforeDir="false" />
-    </list>
+    <list default="true" id="8ccac801-6443-4c87-ab4c-1c774107b675" name="Changes" comment="added foto2.png" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,7 +18,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/task_manager" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
