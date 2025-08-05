@@ -60,4 +60,5 @@ class SubTask(models.Model):
         db_table = 'task_manager_subtask'  # имя таблицы в базе данных
         ordering = ['-created_at']  # сортировка по убыванию даты создания
         verbose_name = 'SubTask'  # человекочитаемое имя модели
+        verbose_name_plural = 'SubTasks'
     # -------------------------------------------------------------------------------------------------------#
