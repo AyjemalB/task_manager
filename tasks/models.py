@@ -41,6 +41,8 @@ class Task(models.Model):
         verbose_name = 'Task'  # человекочитаемое имя модели
     #-----------------------------------------------------------------------------------------------------#
 
+# ----- hw_10 ---------------------------------------------------------------#
+
 class SubTask(models.Model):
     title = models.CharField(max_length=200, unique=True)
     description = models.TextField(blank=True)
