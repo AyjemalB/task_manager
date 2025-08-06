@@ -1,4 +1,4 @@
-from rest_framework import generics
+from rest_framework import generics, filters
 from .models import Task
 from .serializers import TaskSerializer
 from rest_framework.views import APIView
@@ -8,6 +8,7 @@ from rest_framework import status
 from .models import SubTask
 from .serializers import SubTaskSerializer, SubTaskCreateSerializer
 from django.shortcuts import get_object_or_404
+from django_filters.rest_framework import DjangoFilterBackend
 
 
 """
@@ -32,12 +33,25 @@ class TaskCreateView(generics.CreateAPIView):
 Создайте маршруты для обращения к представлениям.
 """
 # Получение списка всех задач
-class TaskListView(generics.ListAPIView):
+# class TaskListView(generics.ListAPIView):
+#     queryset = Task.objects.all()
+#     serializer_class = TaskSerializer
+
+class TaskListCreateView(generics.ListCreateAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
+    filterset_fields = ['status', 'deadline']
+    search_fields = ['title', 'description']
+    ordering_fields = ['created_at']
+    ordering = ['-created_at']  # по умолчанию — от новых к старым
 
-# Получение одной задачи по ID
-class TaskDetailView(generics.RetrieveAPIView):
+# # Получение одной задачи по ID
+# class TaskDetailView(generics.RetrieveAPIView):
+#     queryset = Task.objects.all()
+#     serializer_class = TaskSerializer
+
+class TaskDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
 

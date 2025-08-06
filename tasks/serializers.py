@@ -7,7 +7,8 @@ from .models import Category
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
-        fields = ['id', 'title', 'description', 'status', 'deadline']
+        #fields = ['id', 'title', 'description', 'status', 'deadline']
+        fields = '__all__'
 
 
 """ hw_13_1
