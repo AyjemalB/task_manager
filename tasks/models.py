@@ -27,7 +27,7 @@ class Task(models.Model):
     description = models.TextField(blank=True)
     categories = models.ManyToManyField(Category)
     status = models.CharField(max_length=15, choices=STATUS_CHOICES, default='NEW')
-    deadline = models.DateTimeField()
+    deadline = models.DateTimeField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     #---------------- hw_9 задание -----------------------------------------------------------------------#

@@ -92,39 +92,67 @@ class TaskStatsView(APIView):
 Создайте классы представлений для получения, обновления и удаления подзадач (SubTaskDetailUpdateDeleteView).
 Добавьте маршруты в файле urls.py, чтобы использовать эти классы.
 """
-#Список и создание подзадач
-class SubTaskListCreateView(APIView):
-    def get(self, request):
-        subtasks = SubTask.objects.all()
-        serializer = SubTaskSerializer(subtasks, many=True)
-        return Response(serializer.data)
+# #Список и создание подзадач
+# class SubTaskListCreateView(APIView):
+#     def get(self, request):
+#         subtasks = SubTask.objects.all()
+#         serializer = SubTaskSerializer(subtasks, many=True)
+#         return Response(serializer.data)
+#
+#     def post(self, request):
+#         serializer = SubTaskCreateSerializer(data=request.data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return Response(serializer.data, status=status.HTTP_201_CREATED)
+#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+#
+# #Получение, обновление и удаление одной подзадачи
+# class SubTaskDetailUpdateDeleteView(APIView):
+#     def get_object(self, pk):
+#         return get_object_or_404(SubTask, pk=pk)
+#
+#     def get(self, request, pk):
+#         subtask = self.get_object(pk)
+#         serializer = SubTaskSerializer(subtask)
+#         return Response(serializer.data)
+#
+#     def put(self, request, pk):
+#         subtask = self.get_object(pk)
+#         serializer = SubTaskCreateSerializer(subtask, data=request.data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return Response(serializer.data)
+#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+#
+#     def delete(self, request, pk):
+#         subtask = self.get_object(pk)
+#         subtask.delete()
+#         return Response(status=status.HTTP_204_NO_CONTENT)
 
-    def post(self, request):
-        serializer = SubTaskCreateSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+#-----------------------------------------------------------------------------------------------------------------#
+""" hw_15_2
+Задание 2: Замена представлений для подзадач (SubTasks) на Generic Views
+Шаги для выполнения:
+Замените классы представлений для подзадач на Generic Views:
+Используйте ListCreateAPIView для создания и получения списка подзадач.
+Используйте RetrieveUpdateDestroyAPIView для получения, обновления и удаления подзадач.
+Реализуйте фильтрацию, поиск и сортировку:
+Реализуйте фильтрацию по полям status и deadline.
+Реализуйте поиск по полям title и description.
+Добавьте сортировку по полю created_at.
+"""
+#Представление для списка и создания подзадач
+class SubTaskListCreateView(generics.ListCreateAPIView):
+    queryset = SubTask.objects.all()
+    serializer_class = SubTaskSerializer
 
-#Получение, обновление и удаление одной подзадачи
-class SubTaskDetailUpdateDeleteView(APIView):
-    def get_object(self, pk):
-        return get_object_or_404(SubTask, pk=pk)
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
+    filterset_fields = ['status', 'deadline']
+    search_fields = ['title', 'description']
+    ordering_fields = ['created_at']
+    ordering = ['created_at']  # по умолчанию сортировка
 
-    def get(self, request, pk):
-        subtask = self.get_object(pk)
-        serializer = SubTaskSerializer(subtask)
-        return Response(serializer.data)
-
-    def put(self, request, pk):
-        subtask = self.get_object(pk)
-        serializer = SubTaskCreateSerializer(subtask, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    def delete(self, request, pk):
-        subtask = self.get_object(pk)
-        subtask.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+#Представление для получения, обновления и удаления подзадачи
+class SubTaskDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = SubTask.objects.all()
+    serializer_class = SubTaskSerializer
